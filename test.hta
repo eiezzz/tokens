@@ -1,0 +1,35 @@
+
+<html>
+<head>
+<title>HTA Test</title>
+
+<HTA:APPLICATION
+    ID="HTATest"
+    APPLICATIONNAME="HTATest"
+    BORDER="thin"
+    CAPTION="yes"
+    SINGLEINSTANCE="yes"
+    SCROLL="no"
+/>
+
+<script type="text/javascript">
+function test() {
+    try {
+        var shell = new ActiveXObject("WScript.Shell");
+
+        alert("ActiveX is working!");
+
+        shell.Run("notepad.exe", 1, false);
+
+    } catch (e) {
+        alert("Error: " + e.message);
+    }
+}
+</script>
+</head>
+
+<body>
+    <h3>HTA ActiveX Test</h3>
+    <button onclick="test()">Open Notepad</button>
+</body>
+</html>
